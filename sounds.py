@@ -31,11 +31,11 @@ def generate_audio(prompt, seconds_total, model, model_config, device, output_di
 
     output = generate_diffusion_cond(
         model,
-        steps=175,
-        cfg_scale=8,
+        steps=50,
+        cfg_scale=6,
         conditioning=conditioning,
         sample_size=model_config["sample_size"],
-        sigma_min=0.1,
+        sigma_min=0.3,
         sigma_max=50,
         sampler_type="dpmpp-2m-sde",
         device=device
@@ -57,13 +57,11 @@ if __name__ == "__main__":
 
     # Array of prompts
     prompts = [
-        "a peaceful ocean waves sound",
-        "birds chirping in a forest",
-        "urban traffic noise",
-        "gentle rain falling on a roof"
+        "88 BPM fireworks explode overhead",
+        "88 BPM fireworks explode overhead"
     ]
 
-    seconds_total = 15
+    seconds_total = 47
     generated_files = []
 
     # Loop through prompts and generate audio for each
